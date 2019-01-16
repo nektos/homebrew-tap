@@ -1,9 +1,9 @@
 class Act < Formula
   desc "Run GitHub Actions locally"
   homepage "https://github.com/nektos/act"
-  url "https://github.com/nektos/act/releases/download/v0.0.3/act_Darwin_x86_64.tar.gz"
-  version "0.0.3"
-  sha256 "3ff309011344b83a907dec5ae1614e16f65995acf8c1ce76341afb5b489c2642"
+  url "https://github.com/nektos/act/releases/download/v0.0.4/act_Darwin_x86_64.tar.gz"
+  version "0.0.4"
+  sha256 "bb26c785c0342eb1caa2858b3650871a6da571b5d527127e45d026d658470404"
 
   def install
     bin.install "act"
