@@ -2,16 +2,16 @@
 class Act < Formula
   desc "Run GitHub Actions locally"
   homepage "https://github.com/nektos/act"
-  version "0.2.12"
+  version "0.2.13"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/nektos/act/releases/download/v0.2.12/act_Darwin_x86_64.tar.gz"
-    sha256 "5d21506b0871a6fa60257b3564310a3da2daf63440a4edb8a8f4c19347b949ef"
+    url "https://github.com/nektos/act/releases/download/v0.2.13/act_Darwin_x86_64.tar.gz"
+    sha256 "2fcb3f80dfea714472b0e2ab7adf5ac63a249908598d3a1bb86d4eca137229c4"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/nektos/act/releases/download/v0.2.12/act_Linux_x86_64.tar.gz"
-      sha256 "19e4d4c496c8e4de50092bfbc2d31ce4fb2bb267b4297bdc0d4ec91f842c1eea"
+      url "https://github.com/nektos/act/releases/download/v0.2.13/act_Linux_x86_64.tar.gz"
+      sha256 "7d6a54c3be47599b043c52c1872e06d1e5bf721c126a76c0daafe339ae9bd0aa"
     end
   end
 
