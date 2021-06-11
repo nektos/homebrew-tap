@@ -5,16 +5,33 @@
 class Act < Formula
   desc "Run GitHub Actions locally"
   homepage "https://github.com/nektos/act"
-  version "0.2.22"
+  version "0.2.23"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/nektos/act/releases/download/v0.2.22/act_Darwin_x86_64.tar.gz"
-    sha256 "256143c67d22906739244bdddb1142f0f72752c61b47098159f3afc6e894ae7d"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/nektos/act/releases/download/v0.2.23/act_Darwin_x86_64.tar.gz"
+      sha256 "f7a4584d6befb6deb60a0376755b4560e3c3106e5465616a25593271c74b244b"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/nektos/act/releases/download/v0.2.23/act_Darwin_arm64.tar.gz"
+      sha256 "35f37f6853a23ae8c8991732373aca416731fb5d4e35b6994c17cc47879a7b11"
+    end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/nektos/act/releases/download/v0.2.22/act_Linux_x86_64.tar.gz"
-    sha256 "49446600a0555d3f6c61deb01bd6495bb868b6e8547cc04123f67ce6099db095"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/nektos/act/releases/download/v0.2.23/act_Linux_x86_64.tar.gz"
+      sha256 "40a090da8383535b37b70d795ea0805e14a12dad77d0ca46d35f8274db74e324"
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/nektos/act/releases/download/v0.2.23/act_Linux_armv6.tar.gz"
+      sha256 "4441eaf01e47764016c1a0c7b7facde8cd994bc3e464771e77e350059d35fab7"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/nektos/act/releases/download/v0.2.23/act_Linux_arm64.tar.gz"
+      sha256 "21ab7ec9dca36bc21581834070941eb21713bdec49b25639f5179e86bf6e6d3a"
+    end
   end
 
   def install
