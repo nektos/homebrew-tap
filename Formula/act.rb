@@ -6,7 +6,6 @@ class Act < Formula
   desc "Run GitHub Actions locally"
   homepage "https://github.com/nektos/act"
   version "0.2.24"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
